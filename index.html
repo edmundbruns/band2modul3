@@ -627,7 +627,9 @@ tr:nth-child(even) td { background:#f7f9fc; }
 <div class="intro-block">
   <h1>Band 2, Modul 3: Schutzauftrag und erste Gefährdungseinschätzung</h1>
   <p>Modul 1 hat die rechtliche Grundorientierung gelegt. Modul 2 hat Datenschutz, Schweigepflicht und Vertrauensschutz vertieft. Modul 3 verbindet beides mit der Frage: <strong>Was tun Sie, wenn Hinweise auf eine mögliche Kindeswohlgefährdung auftauchen?</strong></p>
-  <p>Dieses Modul trainiert eine erste strukturierte fachliche Einschätzung. Die vertiefte Gefährdungseinschätzung, Krisenintervention und Schutzplanung folgen später in Band 4.</p>
+  <p>Dieses Modul trainiert eine erste strukturierte fachliche Einschätzung. Die vertiefte Gefährdungseinschätzung, Krisenintervention und Schutzplanung folgen später in Band 4.<div class="form-group"><label><input type="checkbox" id="privacyConfirm"> Keine identifizierenden Falldaten</label></div>
+<div class="form-group"><label><input type="checkbox" id="sendConsent"> Online-Übermittlung zustimmen</label></div>
+</p>
   <div class="btn-row">
     <button class="btn btn-outline btn-sm" onclick="resetProgress()">↺ Fortschritt zurücksetzen</button>
     <button class="btn btn-outline btn-sm" onclick="exportResults()">Lokale Ergebnisse als Datei speichern</button>
@@ -1806,7 +1808,7 @@ function updateSendState() {
   const nameValue = (finalName && finalName.value.trim()) || (headerName && headerName.value.trim()) || "";
   const emailValue = (finalEmail && finalEmail.value.trim()) || (headerEmail && headerEmail.value.trim()) || "";
   const emailValid = isValidEmailValue(emailValue);
-  const ready = nameValue.length > 0 && emailValid && quizEvaluated && completedSections.includes(12);
+  const ready = nameValue.length > 0 && emailValid ;
 
   if (btn) btn.disabled = !ready;
   if (headerBtn) headerBtn.disabled = !ready;
